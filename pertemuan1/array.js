@@ -8,7 +8,7 @@ const fruits = ["Apel", "Anggur", "Jeruk"];
 // for (let i = 0; i < fruits.length; i++) console.log(fruits[i]);
 
 // looping for-of
-for (const fruit of fruits) console.log(fruit);
+for (const fruit of fruits) console.log(fruit); 
 
 // foreach
 // fruits.forEach(element => {
