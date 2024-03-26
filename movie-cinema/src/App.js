@@ -1,21 +1,26 @@
-import Footer from "./component/Footer.js";
-import Header from "./component/Header.js";
-import User from "./component/User.js";
-import Car from "./component/Car.js";
+import Footer from "./component/Footer/Footer.js";
+import Navbar from "./component/Navbar/Navbar.js";
+import Main from "./component/Main/Main.js";
+import User from "./component/User/User.js";
+import Car from "./component/Car/Car.js";
 import gambar from "./component/man.png";
 
 function App() {
-  const name ="Kairos";
-  const name1 ="Raihan";
-  const name2 ="Wafiqa";
-  const name3 ="Samsul";
-  const name4 ="Zyn";
+  // const name ="Kairos";
+  // const name1 ="Raihan";
+  // const name2 ="Wafiqa";
+  // const name3 ="Samsul";
+  // const name4 ="Zyn";
+  const nama5 ="Bambang Pacul";
+  const nama6 ="Budi";
+  const nama7 ="Ucup";
 
   return (
-    <div className="App">
-      <Header/>
-      <h1>Hello World</h1>      
-      <Car 
+    <div className="container">
+      <Navbar />
+      <Main />
+      {/* <h1>Hello World</h1>   */}
+      {/* <Car 
         merk="Ferrari" 
         harga={500} 
         isNew={true} 
@@ -67,13 +72,11 @@ function App() {
         hobis={["Main Bola", "Berenang"]}
         status={true}
         lihat={() => alert("Profil " + name4 + " sedang dibuka")}
-      />
-
+      /> */}
       <Footer nama="Zyn Kairos"/>
-      <Footer nama="Muhammad Raihan"/>
     </div>
   );
-}
+};
 
 
 export default App;
