@@ -22,6 +22,7 @@ const Car = ({
       //   <button onClick={beli}>Beli</button>
       // </>
       <div className="card">
+        <img src={gambar} alt="" />
         <h3>Merk Mobil : {merk} </h3>
         <h4>Harga Mobil : Rp. {harga} ,00</h4>
         <h5>Keadaan Mobil : {isNew ? "Baru" : "Bekas"} </h5>
