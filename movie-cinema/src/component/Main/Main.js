@@ -53,7 +53,7 @@ const Main = () => {
                 harga="4,5 miliyar" 
                 isNew="true" 
             /> */}
-            <Car />
+            {/* <Car /> */}
             <Movies />
             {datas.map((data) => ( 
                 <User 
