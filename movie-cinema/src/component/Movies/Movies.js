@@ -36,8 +36,6 @@ import { getMovieList } from "../../Api.js";
 //                                                                              //
 // ====================================== Selesai ============================= //
 
-
-
 const Movies = () => {
     // const [nama, setNama] = useState("Ucup");
 
@@ -85,10 +83,9 @@ const Movies = () => {
                     })}  
 
                     {/* <p>{nama}</p> */}
-                    {/* <button onClick={handleClick}>Add Movie</button>               */}
+                    {/* <button onClick={handleClick}>Add Movie</button> */}
             </div>
             <AddMovieForm onAddMovie={addMovie}/>
-
         </div>
     );
 };
