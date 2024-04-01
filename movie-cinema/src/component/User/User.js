@@ -49,7 +49,7 @@ const User = ({
           </thead>
           <tbody className="card-body">
             <tr>
-              <td colSpan={2}>
+              <td colSpan={2}> 
                 {member}
               </td>
             </tr>
