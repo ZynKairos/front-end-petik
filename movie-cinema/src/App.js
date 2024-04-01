@@ -7,26 +7,25 @@ import AddMovieForm from "./component/AddMovieForm/AddMovieForm.js";
 import User from "./component/User/User.js";
 import Car from "./component/Car/Car.js";
 import gambar from "./component/man.png";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.js";
+import Popular from "./pages/movie/Popular.js";
+import TopRated from "./pages/movie/TopRated.js";
+import Detail from "./pages/movie/detail.js";
 
 function App() {
-  const addMovie = () => {
-
-  }
-  // const name ="Kairos";
-  // const name1 ="Raihan";
-  // const name2 ="Wafiqa";
-  // const name3 ="Samsul";
-  // const name4 ="Zyn";
-  // const nama5 ="Bambang Pacul";
-  // const nama6 ="Budi";
-  // const nama7 ="Ucup";
-
   return (
     <div className="container">
-      <Navbar />
- 
-      <Main />
-      <Footer nama="Zyn Kairos"/>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={ <Home />} />
+          <Route path="/popular" element={ <Popular />} />
+          <Route path="/top" element={ <TopRated />} />
+          <Route path="/detail/:id" element={ <Detail />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 };

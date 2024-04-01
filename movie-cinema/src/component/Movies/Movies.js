@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Movie from "../Movie/Movie.js";
 import "./Movies.css";
 import AddMovieForm from "../AddMovieForm/AddMovieForm.js";
+import { getMovieList } from "../../Api.js";
 
 // ========================= Tentang Pertambahan & Pengurangan ================ //
 // const Counter = () => {                                                      //
@@ -38,99 +39,11 @@ import AddMovieForm from "../AddMovieForm/AddMovieForm.js";
 
 
 const Movies = () => {
-    const [nama, setNama] = useState("Ucup");
+    // const [nama, setNama] = useState("Ucup");
 
-    console.log(nama);
+    // console.log(nama);
 
-    const [datas, setDatas] = useState([
-        {            
-            title: "judul film 1", 
-            year: 2012,
-            genre: "Comedy",
-            poster: "https://picsum.photos/200/300",
-        },
-        {            
-            title: "judul film 2", 
-            year: 2043,
-            genre: "Horror",
-            poster: "https://picsum.photos/200/300",
-        },
-        {            
-            title: "judul film 3", 
-            year: 2022,
-            genre: "Romance",
-            poster: "https://picsum.photos/200/300",
-        },
-        {            
-            title: "judul film 4", 
-            year: 2023,
-            genre: "Horror",
-            poster: "https://picsum.photos/200/300",
-        },
-        {            
-            title: "judul film 5", 
-            year: 2013,
-            genre: "Horror",
-            poster: "https://picsum.photos/200/300",
-        },
-        {            
-            title: "judul film 6", 
-            year: 2054,
-            genre: "Horror",
-            poster: "https://picsum.photos/200/300",
-        },
-        {            
-            title: "judul film 7", 
-            year: 2042,
-            genre: "Horror",
-            poster: "https://picsum.photos/200/300",
-        },        
-    ]);
-
-    // const datas = [
-    //     {            
-    //         title: "judul film 1", 
-    //         year: 2012,
-    //         genre: "Comedy",
-    //         poster: "https://picsum.photos/200/300",
-    //     },
-    //     {            
-    //         title: "judul film 2", 
-    //         year: 2043,
-    //         genre: "Horror",
-    //         poster: "https://picsum.photos/200/300",
-    //     },
-    //     {            
-    //         title: "judul film 3", 
-    //         year: 2022,
-    //         genre: "Romance",
-    //         poster: "https://picsum.photos/200/300",
-    //     },
-    //     {            
-    //         title: "judul film 4", 
-    //         year: 2023,
-    //         genre: "Horror",
-    //         poster: "https://picsum.photos/200/300",
-    //     },
-    //     {            
-    //         title: "judul film 5", 
-    //         year: 2013,
-    //         genre: "Horror",
-    //         poster: "https://picsum.photos/200/300",
-    //     },
-    //     {            
-    //         title: "judul film 6", 
-    //         year: 2054,
-    //         genre: "Horror",
-    //         poster: "https://picsum.photos/200/300",
-    //     },
-    //     {            
-    //         title: "judul film 7", 
-    //         year: 2042,
-    //         genre: "Horror",
-    //         poster: "https://picsum.photos/200/300",
-    //     },        
-    // ];
+    const [datas, setDatas] = useState([]);
 
     const handleClick = () => {
         const movie = {
@@ -140,12 +53,19 @@ const Movies = () => {
             poster: "https://picsum.photos/200/300",
         };
         // setDatas([...datas, movie]);
-        setNama("Budi")
+        // setNama("Budi")
     };
 
     const addMovie = (movie) => {
         setDatas([...datas, movie]);
     };
+
+    useEffect(() => {
+        // menangkap data result api
+        getMovieList().then((result) => {
+            setDatas(result);
+        });
+    }, []);
 
     console.log(datas);
 
@@ -156,18 +76,19 @@ const Movies = () => {
                 {datas.map((data, index) => {
                         return (
                             <Movie 
+                                id={data.id}
                                 title={data.title} 
-                                year={data.year} 
-                                genre={data.genre} 
-                                poster={data.poster}
+                                year={data.release_date} 
+                                poster={data.poster_path}
                             />
                         );
                     })}  
-                    <AddMovieForm onAddMovie={addMovie}/>
 
                     {/* <p>{nama}</p> */}
                     {/* <button onClick={handleClick}>Add Movie</button>               */}
             </div>
+            <AddMovieForm onAddMovie={addMovie}/>
+
         </div>
     );
 };

@@ -1,4 +1,6 @@
 // import User from "../User/User.js";
+import AddMovieForm from "../AddMovieForm/AddMovieForm.js";
+import Counter from "../Counter/Counter.js";
 import Car from "../Car/Car.js";
 import Movies from "../Movies/Movies.js";
 import User from "../User/User.js";
@@ -40,6 +42,7 @@ const Main = () => {
     ]
     return (
         <div class="content">
+            <Hero />
             {/* <Car 
                 gambar="https://assets-skorid.s3.ap-southeast-1.amazonaws.com/Ferrari_FXX_K_EVO_Dok_Ferrari_19ea2405c8.jpg" 
                 merk="Ferrari" 

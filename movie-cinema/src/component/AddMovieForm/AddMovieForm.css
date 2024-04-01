@@ -1,4 +1,4 @@
-/* Small Screen */
+/* Small screen */
 .container {
     margin: 1rem;
 }
@@ -54,7 +54,7 @@
     border-radius: 5px;
 }
 
-/* Medium Screen */
+/* Medium screen */
 @media (min-width: 768px) {
     .form-left {
         text-align: center;
@@ -62,7 +62,7 @@
     }
 }
 
-/* Largen Screen */
+/* Large Screen */
 @media (min-width: 992px) {
     .container {
         max-width: 1200px;
@@ -81,6 +81,10 @@
     }
 
     .form-left {
+        flex-basis: auto;
+    }
+
+    .form-right {
         flex-basis: auto;
     }
 }

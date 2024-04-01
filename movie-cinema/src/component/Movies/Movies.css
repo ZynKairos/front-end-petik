@@ -1,13 +1,13 @@
 .movies-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
 }
 
-/*  Medium Screen */
-@media (min-width: 768px) {
+/* Medium screen */
+@media (max-width: 768px) {
     .movies-container {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -16,19 +16,3 @@
         grid-template-columns: 1fr;
     }
 }
-
-/* ====== Tentang Pertambahan dan pengurangan ========== */
-/* .counter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.counter__value {
-  font-size: 3rem;
-  line-height: 1.2;
-}
-
-.counter_button{
-    color: aqua;
-} */
