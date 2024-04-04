@@ -24,7 +24,7 @@ function App() {
           <Route path="/top" element={ <TopRated />} />
           <Route path="/detail/:id" element={ <Detail />} />
         </Routes>
-        <Footer />
+        <Footer nama="Zyn ~ Kairos"/>
       </BrowserRouter>
     </div>
   );
