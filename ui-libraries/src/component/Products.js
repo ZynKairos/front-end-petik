@@ -1,28 +1,29 @@
 import React from 'react'
-import { Card, CardBody, CardTitle, CardText, Col, Container, Row } from "reactstrap";
+import { Card, CardBody, CardTitle, CardText, Col, Row } from "reactstrap";
+import { NavLink } from 'react-router-dom';
 
-const Movies = () => {
+const Products = () => {
 
-    const movies = [
+    const products = [
         {
-            title: "Movie 1",
-            year: "2020",
+            title: "Product 1",
+            price: "10000",
         },
         {
-            title: "Movie 2",
-            year: "2021",
+            title: "Product 2",
+            price: "15000",
         },
         {
-            title: "Movie 3",
-            year: "2023",
+            title: "Product 3",
+            price: "20000",
         },
         {
-            title: "Movie 4",
-            year: "2013",
+            title: "Product 4",
+            price: "30000",
         },
         {
-            title: "Movie 5",
-            year: "2026",
+            title: "Product 5",
+            price: "40000",
         },
         
     ]
@@ -30,11 +31,11 @@ const Movies = () => {
 
   return (
     <div>
-        <Container>
-            <Row>
-                {movies.map((movie) => {
-                    return (
-                        <Col md={3} className='my-3'>
+        <Row>
+            {products.map((product, index) => {
+                return (
+                    <Col sm={6} md={4} lg={3} key={index} className='mb-4'>
+                        <NavLink to={'/detail'}>
                             <Card
                                 body
                                 color="light"
@@ -47,20 +48,20 @@ const Movies = () => {
                                 />
                                 <CardBody className='text-center'>
                                 <CardTitle tag="h5">
-                                    {movie.title}
+                                    {product.title}
                                 </CardTitle>
                                 <CardText>
-                                    {movie.year}
+                                    {product.price}
                                 </CardText>
                                 </CardBody>
                             </Card>
-                        </Col>
-                    )
-                })}
-            </Row>
-        </Container>
+                        </NavLink>
+                    </Col>
+                )
+            })}
+        </Row>
     </div>
     )
 }
 
-export default Movies
+export default Products

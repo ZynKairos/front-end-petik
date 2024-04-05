@@ -4,8 +4,7 @@ import {
   Navbar,
   NavbarToggler,
   NavbarBrand,
-  Nav,
-  NavbarText,
+  Nav,  
 } from 'reactstrap';
 import  { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,9 +24,10 @@ function NavbarComponent(args) {
               <NavLink className='text-light mx-3' to={'/'} style={{ textDecoration: "none" }}>Home</NavLink>
               <NavLink className='text-light mx-3' to={'/dashboard'} style={{ textDecoration: "none" }}>Dashboard</NavLink>
               <NavLink className='text-light mx-3' to={'/top'} style={{ textDecoration: "none" }}>Top Rated</NavLink>
-              <NavLink className='text-light mx-3' to={'/login'} style={{ textDecoration: "none" }} >Login</NavLink>
           </Nav>
-          <NavbarText>Zyn</NavbarText>
+          <NavLink to={'/login'}>
+            <button className='button is-light'>Login</button>
+          </NavLink>
         </Collapse>
       </Navbar>
     </div>
