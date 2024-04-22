@@ -23,7 +23,7 @@ function NavbarComponent(args) {
           <Nav className="me-auto" navbar>
               <NavLink className='text-light mx-3' to={'/'} style={{ textDecoration: "none" }}>Home</NavLink>
               <NavLink className='text-light mx-3' to={'/dashboard'} style={{ textDecoration: "none" }}>Dashboard</NavLink>
-              <NavLink className='text-light mx-3' to={'/top'} style={{ textDecoration: "none" }}>Top Rated</NavLink>
+              <NavLink className='text-light mx-3' to={'/courses'} style={{ textDecoration: "none" }}>Courses</NavLink>
           </Nav>
           <NavLink to={'/login'}>
             <button className='button is-light'>Login</button>
