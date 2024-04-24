@@ -2,6 +2,22 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios';
 
+// const DetailCourse = () => {
+//     const [name, setName] = useState("");
+//     const [desc, setDesc] = useState("");
+//     const {id} = useParams();
+
+//     useEffect(() => {
+//         getCoursesById();
+//     }, []);
+
+//     const getCoursesById = async () => {
+//         const response = await axios.get(`http://api.sukmax.my.id/course/${id}`);
+//         setName(response.data.name);
+//         setDesc(response.data.desc);
+//     };
+// }
+
 const DetailCourse = () => {
     let {id} = useParams();
 
